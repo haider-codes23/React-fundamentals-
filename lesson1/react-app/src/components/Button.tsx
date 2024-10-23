@@ -1,3 +1,4 @@
+import styles from './Button.module.css';
 interface Props {
   buttonColor: string;
   buttonText: string;
@@ -5,9 +6,15 @@ interface Props {
 };
 
 function Button(props: Props) {
+  
   return (
-    <button type="button" className={"btn btn-" + props.buttonColor} onClick={props.onClick}>{props.buttonText}</button>
-  )
+      <button type="button" className={[styles.btn, styles['btn-' + props.buttonColor]].join(" ")} onClick={props.onClick}>{props.buttonText}</button>
+    )
+  
+  
+  // return (
+  //   <button type="button" className={"btn btn-" + props.buttonColor} onClick={props.onClick}>{props.buttonText}</button>
+  // )
 };
 
 export default Button;
